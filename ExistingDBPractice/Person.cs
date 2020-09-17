@@ -10,7 +10,7 @@ namespace ExistingDBPractice
     {
         public Person()
         {
-            Phonenumber = new HashSet<Phonenumber>();
+            PhoneNumbers = new HashSet<Phonenumber>();
         }
 
         [Key]
@@ -23,7 +23,7 @@ namespace ExistingDBPractice
         [Column(TypeName = "varchar(50)")]
         public string LastName { get; set; }
 
-        [InverseProperty("Person")]
-        public virtual ICollection<Phonenumber> Phonenumber { get; set; }
+        [InverseProperty("Persons")]
+        public virtual ICollection<Phonenumber> PhoneNumbers { get; set; }
     }
 }

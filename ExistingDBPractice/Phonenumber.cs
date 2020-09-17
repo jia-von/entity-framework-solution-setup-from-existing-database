@@ -18,7 +18,7 @@ namespace ExistingDBPractice
         public int PersonId { get; set; }
 
         [ForeignKey(nameof(PersonId))]
-        [InverseProperty("Phonenumber")]
-        public virtual Person Person { get; set; }
+        [InverseProperty("PhoneNumbers")]
+        public virtual Person Persons { get; set; }
     }
 }

@@ -15,8 +15,8 @@ namespace ExistingDBPractice
         {
         }
 
-        public virtual DbSet<Person> Person { get; set; }
-        public virtual DbSet<Phonenumber> Phonenumber { get; set; }
+        public virtual DbSet<Person> Persons { get; set; }
+        public virtual DbSet<Phonenumber> PhoneNumbers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -49,8 +49,8 @@ namespace ExistingDBPractice
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_general_ci");
 
-                entity.HasOne(d => d.Person)
-                    .WithMany(p => p.Phonenumber)
+                entity.HasOne(d => d.Persons)
+                    .WithMany(p => p.PhoneNumbers)
                     .HasForeignKey(d => d.PersonId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_PhoneNumber_Person");
