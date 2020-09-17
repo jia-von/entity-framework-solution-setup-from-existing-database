@@ -15,7 +15,19 @@ namespace ExistingDBPractice
                 firstName = Console.ReadLine().Trim().ToLower();
 
                 Console.WriteLine("The person's full name is: ");
-                Console.WriteLine(context.Persons.Where(x => x.FirstName.ToLower() == firstName).SingleOrDefault().FirstName.ToString());
+
+                Person outputFirstName = context.Persons.Where(x => x.FirstName.ToLower() == firstName).SingleOrDefault();
+
+                if(outputFirstName != null)
+                {
+                    Console.WriteLine($"The full name of the person is {outputFirstName.FirstName} {outputFirstName.LastName}.");
+                }
+                else 
+                {
+                    Console.WriteLine("There is no such name.");
+                }
+
+
             }
         }
     }
