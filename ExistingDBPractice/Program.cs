@@ -21,7 +21,7 @@ namespace ExistingDBPractice
 
                 if(outputFirstName != null)
                 {
-                    Console.WriteLine($"The full name of the person is {outputFirstName.FirstName} {outputFirstName.LastName}.");
+                    Console.WriteLine($"The full name of the person is {outputFirstName.FirstName} {outputFirstName.LastName}. The phone number is {context.PhoneNumbers.Where(x => x.Id == outputFirstName.Id).SingleOrDefault().Number}.");
                 }
                 else 
                 {
