@@ -24,5 +24,5 @@ PM> dotnet add package Pomelo.EntityFrameworkCore.MySQL
 
 - The database was populated in [PHPMyAdmin](https://www.phpmyadmin.net/) using a SQL script. The database is named `existing_db_practice`.
 - The database contains two tables `Person` and `PhoneNumber`.
-- A *PersonContext* model was created and configured to target models `Person.cs` and `PhoneNumber.cs` and the relational database. 
+- A `PersonContext.cs` model was created and configured to target models `Person.cs` and `PhoneNumber.cs` and the relational database. 
 - A simple program was written to take the first name from the user and then to pring the full name of the user from the database. 
